@@ -16,6 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class BookControllerTest {
 
+    static String BOOK_API = "/api/books";
+
     @Autowired
     MockMvc mvc;
 
