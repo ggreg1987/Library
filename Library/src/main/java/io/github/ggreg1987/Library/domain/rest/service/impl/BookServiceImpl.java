@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 public class BookServiceImpl implements BookService {
 
 
+    private BookReporitory repository;
+
     @Override
-    public Book save(Book any) {
-        return null;
+    public Book save(Book book) {
+        return repository.save(book);
     }
 }

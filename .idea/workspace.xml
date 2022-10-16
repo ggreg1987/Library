@@ -63,6 +63,11 @@
     "last_opened_file_path": "C:/Users/55819/Documents/SpringBootIntellj/Library"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.github.ggreg1987.Library.domain.rest.service.impl" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.BookServiceTest.saveBookTest">
     <configuration name="BookControllerTest.createBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
