@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/BookServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +27,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
