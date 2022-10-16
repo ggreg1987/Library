@@ -2,6 +2,7 @@ package io.github.ggreg1987.Library.service;
 
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
+import io.github.ggreg1987.Library.domain.rest.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
