@@ -77,4 +77,10 @@ public class BookControllerTest {
 
                 ;
     }
+
+    @Test
+    @DisplayName("Should show an exception")
+    public void createInvalidBookTest() {
+
+    }
 }
