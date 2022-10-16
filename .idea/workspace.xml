@@ -62,7 +62,7 @@
     "last_opened_file_path": "C:/Users/55819/Documents/SpringBootIntellj/Library"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookControllerTest.createBookTest">
+  <component name="RunManager" selected="JUnit.BookServiceTest.saveBookTest">
     <configuration name="BookControllerTest.createBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -74,6 +74,22 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.BookControllerTest" />
       <option name="METHOD_NAME" value="createBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest.saveBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
+      <option name="METHOD_NAME" value="saveBookTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.saveBookTest" />
         <item itemvalue="JUnit.BookControllerTest.createBookTest" />
         <item itemvalue="JUnit.LibraryApplicationTests" />
       </list>
