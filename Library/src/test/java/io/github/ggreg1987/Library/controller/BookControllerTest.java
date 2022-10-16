@@ -14,8 +14,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -30,7 +32,7 @@ public class BookControllerTest {
 
     @Test
     @DisplayName("creating a successful book.")
-    public void createBookTest() throws JsonProcessingException {
+    public void createBookTest() throws Exception {
 
         String json = new ObjectMapper().writeValueAsString(null);
 
@@ -39,5 +41,15 @@ public class BookControllerTest {
                 .contentType(APPLICATION_JSON)
                 .accept(APPLICATION_JSON)
                 .content(json);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("id").isNotEmpty())
+                .andExpect(jsonPath("title").value("My Book"))
+                .andExpect(jsonPath("author").value("Gabriel"))
+                .andExpect(jsonPath("isbn").value("12345"))
+
+                ;
     }
 }
