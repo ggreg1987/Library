@@ -14,6 +14,6 @@ public class BookController {
     @ResponseStatus(CREATED)
     public BookDTO create(@RequestBody BookDTO dto) {
 
-        return null;
+        return dto;
     }
 }
