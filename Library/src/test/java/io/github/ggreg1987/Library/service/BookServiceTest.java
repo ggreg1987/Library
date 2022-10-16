@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -36,6 +37,15 @@ public class BookServiceTest {
                 .title("Somethings")
                 .isbn("54321")
                 .build();
+
+        Mockito.when(repository.save(book)).thenReturn(
+                Book.builder()
+                        .id(1L)
+                        .author("Gregorio")
+                        .title("Somethings")
+                        .isbn("54321")
+                        .build()
+        );
         var savedBook = service.save(book);
 
         assertThat(savedBook.getId()).isEqualTo(1L);
