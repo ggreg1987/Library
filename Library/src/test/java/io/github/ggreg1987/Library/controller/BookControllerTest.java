@@ -2,6 +2,7 @@ package io.github.ggreg1987.Library.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,7 +35,14 @@ public class BookControllerTest {
     @DisplayName("creating a successful book.")
     public void createBookTest() throws Exception {
 
-        String json = new ObjectMapper().writeValueAsString(null);
+        BookDTO dto = BookDTO
+                .builder()
+                .author("Gabriel")
+                .title("My Book")
+                .isbn("12345")
+                .build();
+
+        String json = new ObjectMapper().writeValueAsString(dto);
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .post(BOOK_API)
