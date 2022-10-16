@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.domain.rest.controller;
 
+import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,8 @@ public class BookController {
     @PostMapping
     @ResponseStatus(CREATED)
     public BookDTO create(@RequestBody BookDTO dto) {
-
-        return dto;
+        Book entity = modelMapper.map(dto, Book.class);
+        var savedBook = service.save(entity);
+        return modelMapper.map(savedBook,BookDTO.class);
     }
 }
