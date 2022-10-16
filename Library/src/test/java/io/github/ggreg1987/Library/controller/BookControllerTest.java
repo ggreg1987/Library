@@ -1,5 +1,7 @@
 package io.github.ggreg1987.Library.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,12 +30,14 @@ public class BookControllerTest {
 
     @Test
     @DisplayName("creating a successful book.")
-    public void createBookTest() {
+    public void createBookTest() throws JsonProcessingException {
+
+        String json = new ObjectMapper().writeValueAsString(null);
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .post(BOOK_API)
                 .contentType(APPLICATION_JSON)
                 .accept(APPLICATION_JSON)
-                .content("");
+                .content(json);
     }
 }
