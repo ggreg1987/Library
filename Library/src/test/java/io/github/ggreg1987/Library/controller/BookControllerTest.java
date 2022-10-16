@@ -1,5 +1,7 @@
 package io.github.ggreg1987.Library.controller;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,4 +18,10 @@ public class BookControllerTest {
 
     @Autowired
     MockMvc mvc;
+
+    @Test
+    @DisplayName("creating a successful book.")
+    public void createBookTest() {
+
+    }
 }
