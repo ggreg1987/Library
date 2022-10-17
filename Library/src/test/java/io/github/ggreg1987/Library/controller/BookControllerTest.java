@@ -41,6 +41,15 @@ public class BookControllerTest {
     @Autowired
     MockMvc mvc;
 
+    private BookDTO createNewBook() {
+        return BookDTO.builder()
+                .id(1L)
+                .author("Gabriel")
+                .title("My Book")
+                .isbn("12345")
+                .build();
+    }
+
     @Test
     @DisplayName("creating a successful book.")
     public void createBookTest() throws Exception {
@@ -53,12 +62,7 @@ public class BookControllerTest {
                 .isbn("12345")
                 .build();
 
-        BookDTO dto = BookDTO
-                .builder()
-                .author("Gabriel")
-                .title("My Book")
-                .isbn("12345")
-                .build();
+        BookDTO dto = createNewBook();
 
         BDDMockito.given(service.save(Mockito.any(Book.class))).willReturn(book);
         String json = new ObjectMapper().writeValueAsString(dto);
@@ -100,7 +104,18 @@ public class BookControllerTest {
     }
     @Test
     @DisplayName("Should show exception when try create a book with duplicated isbn.")
-    public void duplicatedIsbn() {
+    public void duplicatedIsbn() throws Exception {
+
+        BookDTO dto = createNewBook();
+        String json = new ObjectMapper().writeValueAsString(dto);
+        BDDMockito.given(service.save(Mockito.any(Book.class)))
+                .willAnswer(new BusinessException("Duplicated Isbn"));
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .post(BOOK_API)
+                .contentType(APPLICATION_JSON)
+                .accept(APPLICATION_JSON)
+                .content(json);
 
     }
 }
