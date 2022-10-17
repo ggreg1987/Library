@@ -8,6 +8,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
@@ -20,7 +22,7 @@ public class BookController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public BookDTO create(@RequestBody BookDTO dto) {
+    public BookDTO create(@RequestBody @Valid BookDTO dto) {
         Book entity = modelMapper.map(dto, Book.class);
         var savedBook = service.save(entity);
         return modelMapper.map(savedBook,BookDTO.class);
