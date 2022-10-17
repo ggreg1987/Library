@@ -6,6 +6,7 @@ import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,5 +27,9 @@ public class BookController {
         Book entity = modelMapper.map(dto, Book.class);
         var savedBook = service.save(entity);
         return modelMapper.map(savedBook,BookDTO.class);
+    }
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
+
     }
 }
