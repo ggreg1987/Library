@@ -110,14 +110,22 @@ public class BookControllerTest {
 
         BookDTO dto = createNewBook();
         String json = new ObjectMapper().writeValueAsString(dto);
+        String isbnError = "Duplicated Isbn";
         BDDMockito.given(service.save(Mockito.any(Book.class)))
-                .willThrow(new BusinessException("Duplicated Isbn"));
+                .willThrow(new BusinessException(isbnError));
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .post(BOOK_API)
                 .contentType(APPLICATION_JSON)
                 .accept(APPLICATION_JSON)
                 .content(json);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("errors",hasSize(1)))
+                .andExpect(jsonPath("errors[0]").value(isbnError))
+                ;
 
     }
 }
