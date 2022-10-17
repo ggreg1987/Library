@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.domain.rest.controller;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
+import io.github.ggreg1987.Library.exceptions.ApiErrors;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
