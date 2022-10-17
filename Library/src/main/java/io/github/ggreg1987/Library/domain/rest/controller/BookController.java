@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.domain.rest.controller;
 
+import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
@@ -36,5 +37,11 @@ public class BookController {
     public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
         return new ApiErrors(bindingResult);
+    }
+
+    @ExceptionHandler(BusinessException.class)
+    @ResponseStatus(BAD_REQUEST)
+    public ApiErrors handleBusinessExceptions(BusinessException ex) {
+        return new ApiErrors(ex);
     }
 }
