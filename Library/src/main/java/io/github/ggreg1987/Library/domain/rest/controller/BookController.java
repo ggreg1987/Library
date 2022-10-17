@@ -6,6 +6,7 @@ import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +31,7 @@ public class BookController {
     }
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
-
+        BindingResult bindingResult = ex.getBindingResult();
+        return new ApiErrors(bindingResult);
     }
 }
