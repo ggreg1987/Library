@@ -97,7 +97,10 @@ public class BookControllerTest {
                 .andExpect(jsonPath("errors", hasSize(3)))
 
                 ;
-
+    }
+    @Test
+    @DisplayName("Should show exception when try create a book with duplicated isbn.")
+    public void duplicatedIsbn() {
 
     }
 }
