@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -25,5 +26,10 @@ public class BookRepositoryTest {
     @DisplayName("Should return true when exists a book with isbn informed.")
     public void returnTrueWhenIsbExists() {
 
+        String isbn = "123";
+
+        boolean exists = repository.existsByIsbn(isbn);
+
+        assertThat(exists).isTrue();
     }
 }
