@@ -43,7 +43,7 @@ public class BookServiceTest {
     @DisplayName("Should save a book.")
     public void saveBookTest() {
         var book = createValidBook();
-
+        Mockito.when(repository.existsByIsbn(Mockito.anyString())).thenReturn(false);
 
         Mockito.when(repository.save(book)).thenReturn(
                 Book.builder()
