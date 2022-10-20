@@ -127,7 +127,7 @@ public class BookControllerTest {
     }
     @Test
     @DisplayName("Should show book details.")
-    public void bookDetailsTest() {
+    public void bookDetailsTest() throws Exception {
 
         Long id = 1L;
 
@@ -144,7 +144,15 @@ public class BookControllerTest {
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get(BOOK_API.concat("/" + id))
                 .accept(APPLICATION_JSON);
-        
+
+        mvc
+                .perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("id").value(id))
+                .andExpect(jsonPath("title").value(createNewBook().getTitle()))
+                .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
+                .andExpect(jsonPath("isbn").value(createNewBook().getIsbn()))
+                ;
 
     }
 
