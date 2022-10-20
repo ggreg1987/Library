@@ -6,6 +6,8 @@ import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
@@ -16,5 +18,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book save(Book book) {
         return repository.save(book);
+    }
+
+    @Override
+    public Optional<Book> getById(Long id) {
+        return Optional.empty();
     }
 }
