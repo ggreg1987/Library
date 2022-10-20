@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.domain.rest.service.impl;
 
+import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.repository.BookRepository;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
@@ -17,6 +18,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book save(Book book) {
+        if(repository.existsByIsbn(book.getIsbn())) {
+            throw new BusinessException("Duplicated Isbn");
+        }
         return repository.save(book);
     }
 
