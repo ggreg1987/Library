@@ -67,5 +67,7 @@ public class BookServiceTest {
         assertThat(exception)
                 .isInstanceOf(BusinessException.class)
                 .hasMessage("Duplicated Isbn");
+
+        Mockito.verify(repository,Mockito.never()).save(book);
     }
 }
