@@ -1,9 +1,11 @@
 package io.github.ggreg1987.Library.service;
 
+import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.repository.BookRepository;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.impl.BookServiceImpl;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +14,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
@@ -27,16 +30,20 @@ public class BookServiceTest {
         this.service = new BookServiceImpl(repository);
     }
 
-    @Test
-    @DisplayName("Should save a book.")
-    public void saveBookTest() {
-
-        Book book = Book
+    private Book createValidBook() {
+        return Book
                 .builder()
                 .author("Gregorio")
                 .title("Somethings")
                 .isbn("54321")
                 .build();
+    }
+
+    @Test
+    @DisplayName("Should save a book.")
+    public void saveBookTest() {
+        var book = createValidBook();
+
 
         Mockito.when(repository.save(book)).thenReturn(
                 Book.builder()
@@ -54,6 +61,11 @@ public class BookServiceTest {
     @Test
     @DisplayName("Should show an exception when to try save a duplicated ISBN.")
     public void cantSaveBook() {
+        var book = createValidBook();
 
+        Throwable exception = Assertions.catchThrowable(() -> service.save(book));
+        assertThat(exception)
+                .isInstanceOf(BusinessException.class)
+                .hasMessage("Duplicated Isbn");
     }
 }
