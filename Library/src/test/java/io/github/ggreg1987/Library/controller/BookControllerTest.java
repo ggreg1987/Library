@@ -141,6 +141,11 @@ public class BookControllerTest {
         BDDMockito.given(service.getById(id))
                 .willReturn(Optional.of(book));
 
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .get(BOOK_API.concat("/" + id))
+                .accept(APPLICATION_JSON);
+        
+
     }
 
 }
