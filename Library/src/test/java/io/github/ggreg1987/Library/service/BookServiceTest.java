@@ -62,6 +62,7 @@ public class BookServiceTest {
     @DisplayName("Should show an exception when to try save a duplicated ISBN.")
     public void cantSaveBook() {
         var book = createValidBook();
+        Mockito.when(repository.existsByIsbn(Mockito.anyString())).thenReturn(true);
 
         Throwable exception = Assertions.catchThrowable(() -> service.save(book));
         assertThat(exception)
