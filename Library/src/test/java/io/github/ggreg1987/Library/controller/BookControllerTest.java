@@ -20,6 +20,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.Optional;
+
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -122,6 +124,16 @@ public class BookControllerTest {
                 .andExpect(jsonPath("errors",hasSize(1)))
                 .andExpect(jsonPath("errors[0]").value(isbnError))
                 ;
+    }
+    @Test
+    @DisplayName("Should show book details.")
+    public void bookDetailsTest() {
+
+        Long id = 1L;
+
+        BDDMockito.given(service.getById(id))
+                .willReturn(Optional.of(book));
 
     }
+
 }
