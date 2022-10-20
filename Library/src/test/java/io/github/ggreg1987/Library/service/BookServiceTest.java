@@ -51,4 +51,9 @@ public class BookServiceTest {
         assertThat(savedBook.getId()).isEqualTo(1L);
 
     }
+    @Test
+    @DisplayName("Should show an exception when to try save a duplicated ISBN.")
+    public void cantSaveBook() {
+
+    }
 }
