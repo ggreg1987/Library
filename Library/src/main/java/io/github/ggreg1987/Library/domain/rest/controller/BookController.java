@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/api/books")
@@ -32,6 +31,14 @@ public class BookController {
         var savedBook = service.save(entity);
         return modelMapper.map(savedBook,BookDTO.class);
     }
+    @GetMapping("{id}")
+    @ResponseStatus(OK)
+    public BookDTO getById(@PathVariable Long id) {
+        var book = service.getById(id).get();
+        return modelMapper.map(book,BookDTO.class);
+    }
+
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(BAD_REQUEST)
     public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
