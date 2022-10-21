@@ -84,10 +84,20 @@ public class BookServiceTest {
 
         Optional<Book> foundBook = service.getById(id);
 
-        assertThat(foundBook.get().getId()).isEqualTo(1L);
+        assertThat(foundBook.isPresent()).isTrue();
+        assertThat(foundBook.get().getId()).isEqualTo(id);
         assertThat(foundBook.get().getAuthor()).isEqualTo(book.getAuthor());
         assertThat(foundBook.get().getTitle()).isEqualTo(book.getTitle());
         assertThat(foundBook.get().getIsbn()).isEqualTo(book.getIsbn());
+    }
+    @Test
+    @DisplayName("Should show an exception when try find an id")
+    public void bookNotFoundByIdTest() {
+        Long id = 1L;
+        Mockito.when(repository.findById(id)).thenReturn(Optional.empty());
 
+        Optional<Book> book = service.getById(id);
+
+        assertThat(book.isPresent()).isFalse();
     }
 }
