@@ -214,9 +214,17 @@ public class BookControllerTest {
                 .title("Peace and Love")
                 .isbn("9876543")
                 .build();
-
         BDDMockito.given(service.getById(id))
                 .willReturn(Optional.of(updateBook));
+
+        Book updatedBook = Book
+                .builder().id(id)
+                .author("Gabriel")
+                .title("The Title")
+                .isbn("9876543")
+                .build();
+        BDDMockito.given(service.update(updateBook))
+                .willReturn(updatedBook);
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .put(BOOK_API.concat("/" + 1))
@@ -229,7 +237,7 @@ public class BookControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("title").value(createNewBook().getTitle()))
                 .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
-                .andExpect(jsonPath("isbn").value(createNewBook().getIsbn()));
+                .andExpect(jsonPath("isbn").value("9876543"));
     }
 
 }
