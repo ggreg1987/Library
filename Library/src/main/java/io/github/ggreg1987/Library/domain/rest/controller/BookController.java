@@ -41,18 +41,19 @@ public class BookController {
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
     }
 
+    @DeleteMapping("{id}")
+    @ResponseStatus(NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        var book = service.getById(id)
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
+        service.delete(book);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(BAD_REQUEST)
     public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
         return new ApiErrors(bindingResult);
-    }
-
-    @DeleteMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        var book = service.getById(id).get();
-        service.delete(book);
     }
 
     @ExceptionHandler(BusinessException.class)
