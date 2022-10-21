@@ -185,8 +185,22 @@ public class BookControllerTest {
         mvc
                 .perform(request)
                 .andExpect(status().isNoContent());
+    }
 
+    @Test
+    @DisplayName("Should show an exception when can't find the id.")
+    public void cantDeleteBookTest() throws Exception {
 
+        BDDMockito.given(service.getById(anyLong()))
+                .willReturn(Optional.empty());
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .delete(BOOK_API.concat("/" + 1))
+                .accept(APPLICATION_JSON);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isNotFound());
     }
 
 }
