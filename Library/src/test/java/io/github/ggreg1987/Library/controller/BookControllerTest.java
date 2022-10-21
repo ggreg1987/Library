@@ -203,4 +203,33 @@ public class BookControllerTest {
                 .andExpect(status().isNotFound());
     }
 
+    @Test
+    @DisplayName("Should update a book.")
+    public void updateBookTest() throws Exception {
+        Long id = 1L;
+        String json = new ObjectMapper().writeValueAsString(createNewBook());
+        Book updateBook = Book
+                .builder().id(id)
+                .author("Gabriel Gregorio")
+                .title("Peace and Love")
+                .isbn("9876543")
+                .build();
+
+        BDDMockito.given(service.getById(id))
+                .willReturn(Optional.of(updateBook));
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .put(BOOK_API.concat("/" + 1))
+                .accept(APPLICATION_JSON)
+                .contentType(APPLICATION_JSON)
+                .content(json);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("title").value(createNewBook().getTitle()))
+                .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
+                .andExpect(jsonPath("isbn").value(createNewBook().getIsbn()));
+    }
+
 }
