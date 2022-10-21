@@ -15,6 +15,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
@@ -70,5 +72,22 @@ public class BookServiceTest {
                 .hasMessage("Duplicated Isbn");
 
         Mockito.verify(repository,Mockito.never()).save(book);
+    }
+
+    @Test
+    @DisplayName("should show a book.")
+    public void getByIdTest() {
+        Long id = 1L;
+        var book = createValidBook();
+        book.setId(id);
+        Mockito.when(repository.findById(id)).thenReturn(Optional.of(book));
+
+        Optional<Book> foundBook = service.getById(id);
+
+        assertThat(foundBook.get().getId()).isEqualTo(1L);
+        assertThat(foundBook.get().getAuthor()).isEqualTo(book.getAuthor());
+        assertThat(foundBook.get().getTitle()).isEqualTo(book.getTitle());
+        assertThat(foundBook.get().getIsbn()).isEqualTo(book.getIsbn());
+
     }
 }
