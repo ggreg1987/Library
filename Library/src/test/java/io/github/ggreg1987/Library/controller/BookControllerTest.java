@@ -208,22 +208,22 @@ public class BookControllerTest {
     public void updateBookTest() throws Exception {
         Long id = 1L;
         String json = new ObjectMapper().writeValueAsString(createNewBook());
-        Book updateBook = Book
+        Book book = Book
                 .builder().id(id)
-                .author("Gabriel Gregorio")
-                .title("Peace and Love")
-                .isbn("9876543")
+                .author("Gabriel")
+                .title("My Book")
+                .isbn("12345")
                 .build();
         BDDMockito.given(service.getById(id))
-                .willReturn(Optional.of(updateBook));
+                .willReturn(Optional.of(book));
 
         Book updatedBook = Book
                 .builder().id(id)
-                .author("Gabriel")
-                .title("The Title")
-                .isbn("9876543")
+                .author("Gabriel Gregorio")
+                .title("Tittle 12345")
+                .isbn("12345")
                 .build();
-        BDDMockito.given(service.update(updateBook))
+        BDDMockito.given(service.update(book))
                 .willReturn(updatedBook);
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
@@ -237,7 +237,7 @@ public class BookControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("title").value(createNewBook().getTitle()))
                 .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
-                .andExpect(jsonPath("isbn").value("9876543"));
+                .andExpect(jsonPath("isbn").value("12345"));
     }
 
 }
