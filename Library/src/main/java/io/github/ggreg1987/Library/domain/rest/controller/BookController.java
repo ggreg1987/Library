@@ -39,16 +39,20 @@ public class BookController {
         return  service.getById(id)
                 .map(book -> modelMapper.map(book,BookDTO.class))
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
-
-
     }
-
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(BAD_REQUEST)
     public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
         return new ApiErrors(bindingResult);
+    }
+
+    @GetMapping("{id}")
+    @ResponseStatus(NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        var book = service.getById(id).get();
+        service.delete(book);
     }
 
     @ExceptionHandler(BusinessException.class)
