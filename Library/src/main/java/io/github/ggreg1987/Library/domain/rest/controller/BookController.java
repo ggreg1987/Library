@@ -48,7 +48,7 @@ public class BookController {
         return new ApiErrors(bindingResult);
     }
 
-    @GetMapping("{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable Long id) {
         var book = service.getById(id).get();
