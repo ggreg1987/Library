@@ -111,9 +111,9 @@ public class BookServiceTest {
         Mockito.verify(repository,Mockito.times(1)).delete(book);
     }
     @Test
+    @DisplayName("Cant delete a null book or without id.")
     public void deleteInvalidBookTest() {
-        var book = Book
-                .builder().id(1L).build();
+        var book = new Book();
 
         org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
                 () -> service.delete(book));
