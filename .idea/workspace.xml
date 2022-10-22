@@ -74,7 +74,7 @@
       <recent name="io.github.ggreg1987.Library.domain.rest.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookRepositoryTest.saveBookTest">
+  <component name="RunManager" selected="JUnit.BookRepositoryTest.returnTrueWhenIsbExists">
     <configuration name="BookRepositoryTest.returnTrueWhenIsbExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -156,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookRepositoryTest.saveBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.returnTrueWhenIsbExists" />
+        <item itemvalue="JUnit.BookRepositoryTest.saveBookTest" />
         <item itemvalue="JUnit.BookServiceTest.updateInvalidBook" />
         <item itemvalue="JUnit.BookServiceTest.updateBookTest" />
         <item itemvalue="JUnit.BookServiceTest" />

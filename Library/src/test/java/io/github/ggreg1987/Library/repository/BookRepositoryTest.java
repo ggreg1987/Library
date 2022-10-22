@@ -36,8 +36,10 @@ public class BookRepositoryTest {
     @Test
     @DisplayName("Should return true when exists a book with isbn informed.")
     public void returnTrueWhenIsbExists() {
+        String isbn = "53221";
 
-        String isbn = "123";
+        var book = createNewBook(isbn);
+        testEntityManager.persist(book);
 
         boolean exists = repository.existsByIsbn(isbn);
 
