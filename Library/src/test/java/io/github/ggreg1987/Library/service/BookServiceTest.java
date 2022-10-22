@@ -106,7 +106,7 @@ public class BookServiceTest {
         var book = Book
                 .builder().id(1L).build();
 
-        service.delete(book);
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow(() -> service.delete(book));
 
         Mockito.verify(repository,Mockito.times(1)).delete(book);
     }
