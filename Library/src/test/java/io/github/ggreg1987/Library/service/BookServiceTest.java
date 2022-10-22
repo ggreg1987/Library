@@ -110,4 +110,14 @@ public class BookServiceTest {
 
         Mockito.verify(repository,Mockito.times(1)).delete(book);
     }
+    @Test
+    public void deleteInvalidBookTest() {
+        var book = Book
+                .builder().id(1L).build();
+
+        org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
+                () -> service.delete(book));
+
+        Mockito.verify(repository,Mockito.never()).delete(book);
+    }
 }
