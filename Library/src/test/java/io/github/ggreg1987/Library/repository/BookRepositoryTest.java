@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.repository;
 
+import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.repository.BookRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,5 +32,20 @@ public class BookRepositoryTest {
         boolean exists = repository.existsByIsbn(isbn);
 
         assertThat(exists).isTrue();
+    }
+
+    @Test
+    @DisplayName("Should save a book.")
+    public void saveBookTest() {
+
+        var book = Book
+                .builder().id(1L)
+                .author("gabriel")
+                .title("My Book")
+                .isbn("12345").build();
+
+        var bookSaved = repository.save(book);
+
+        assertThat(bookSaved.getId()).isNotNull();
     }
 }
