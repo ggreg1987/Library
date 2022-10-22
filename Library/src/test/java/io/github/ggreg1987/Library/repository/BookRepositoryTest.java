@@ -23,6 +23,16 @@ public class BookRepositoryTest {
     @Autowired
     BookRepository repository;
 
+    String isbn = "12345";
+
+    private Book createNewBook(String isbn) {
+        return Book.builder()
+                .title("My Book")
+                .author("Gabriel")
+                .isbn(isbn)
+                .build();
+    }
+
     @Test
     @DisplayName("Should return true when exists a book with isbn informed.")
     public void returnTrueWhenIsbExists() {
@@ -38,11 +48,7 @@ public class BookRepositoryTest {
     @DisplayName("Should save a book.")
     public void saveBookTest() {
 
-        var book = Book
-                .builder().id(1L)
-                .author("gabriel")
-                .title("My Book")
-                .isbn("12345").build();
+        var book = createNewBook(isbn);
 
         var bookSaved = repository.save(book);
 

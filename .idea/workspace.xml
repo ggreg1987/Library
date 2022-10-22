@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/repository/BookRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/repository/BookRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +75,22 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.BookRepositoryTest.saveBookTest">
+    <configuration name="BookRepositoryTest.returnTrueWhenIsbExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.repository" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.repository.BookRepositoryTest" />
+      <option name="METHOD_NAME" value="returnTrueWhenIsbExists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookRepositoryTest.saveBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -103,22 +118,6 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTest.deleteBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
-      <option name="METHOD_NAME" value="deleteBookTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BookRepositoryTest.saveBookTest" />
+        <item itemvalue="JUnit.BookRepositoryTest.returnTrueWhenIsbExists" />
         <item itemvalue="JUnit.BookServiceTest.updateInvalidBook" />
         <item itemvalue="JUnit.BookServiceTest.updateBookTest" />
         <item itemvalue="JUnit.BookServiceTest" />
-        <item itemvalue="JUnit.BookServiceTest.deleteBookTest" />
       </list>
     </recent_temporary>
   </component>
