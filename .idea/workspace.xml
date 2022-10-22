@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="" />
+    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +74,7 @@
       <recent name="io.github.ggreg1987.Library.domain.rest.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.updateBookTest">
+  <component name="RunManager" selected="JUnit.BookServiceTest.updateInvalidBook">
     <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -84,22 +86,6 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTest.bookNotFoundByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
-      <option name="METHOD_NAME" value="bookNotFoundByIdTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,13 +138,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookServiceTest.updateInvalidBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
+      <option name="METHOD_NAME" value="updateInvalidBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.updateInvalidBook" />
         <item itemvalue="JUnit.BookServiceTest.updateBookTest" />
         <item itemvalue="JUnit.BookServiceTest" />
         <item itemvalue="JUnit.BookServiceTest.deleteBookTest" />
         <item itemvalue="JUnit.BookServiceTest.deleteInvalidBookTest" />
-        <item itemvalue="JUnit.BookServiceTest.bookNotFoundByIdTest" />
       </list>
     </recent_temporary>
   </component>

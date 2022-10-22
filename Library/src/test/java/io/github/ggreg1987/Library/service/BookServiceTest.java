@@ -138,4 +138,15 @@ public class BookServiceTest {
         assertThat(book.getTitle()).isEqualTo(update.getTitle());
 
     }
+
+    @Test
+    @DisplayName("Cant update a null book or without id.")
+    public void updateInvalidBookTest() {
+        var book = new Book();
+
+        org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
+                () -> service.update(book));
+
+        Mockito.verify(repository,Mockito.never()).save(book);
+    }
 }
