@@ -100,4 +100,14 @@ public class BookServiceTest {
 
         assertThat(book.isPresent()).isFalse();
     }
+    @Test
+    @DisplayName("Should delete a book.")
+    public void deleteBookTest() {
+        var book = Book
+                .builder().id(1L).build();
+
+        service.delete(book);
+
+        Mockito.verify(repository,Mockito.times(1)).delete(book);
+    }
 }

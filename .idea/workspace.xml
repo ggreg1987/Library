@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +75,7 @@
       <recent name="io.github.ggreg1987.Library.domain.rest.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.bookNotFoundByIdTest">
+  <component name="RunManager" selected="JUnit.BookServiceTest.deleteBookTest">
     <configuration name="BookControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -88,22 +87,6 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.BookControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookControllerTest.cantDeleteBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.BookControllerTest" />
-      <option name="METHOD_NAME" value="cantDeleteBookTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,6 +123,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookServiceTest.deleteBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
+      <option name="METHOD_NAME" value="deleteBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookServiceTest.getByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -158,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.deleteBookTest" />
         <item itemvalue="JUnit.BookServiceTest.bookNotFoundByIdTest" />
         <item itemvalue="JUnit.BookServiceTest.getByIdTest" />
         <item itemvalue="JUnit.BookControllerTest" />
         <item itemvalue="JUnit.BookControllerTest.updateBookTest" />
-        <item itemvalue="JUnit.BookControllerTest.cantDeleteBookTest" />
       </list>
     </recent_temporary>
   </component>
