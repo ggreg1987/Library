@@ -5,6 +5,8 @@ import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.repository.BookRepository;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -43,6 +45,11 @@ public class BookServiceImpl implements BookService {
             throw new IllegalArgumentException("Book id cant be null");
         }
         return repository.save(book);
+    }
+
+    @Override
+    public Page<Book> find(Book filter, Pageable pageRequest) {
+        return null;
     }
 
 }
