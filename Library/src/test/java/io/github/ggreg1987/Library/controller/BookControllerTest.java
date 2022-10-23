@@ -263,6 +263,10 @@ public class BookControllerTest {
                 book.getTitle(),
                 book.getAuthor());
 
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .get(BOOK_API.concat(queryString))
+                .accept(APPLICATION_JSON);
+
 
     }
 
