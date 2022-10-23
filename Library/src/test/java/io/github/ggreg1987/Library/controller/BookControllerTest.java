@@ -254,6 +254,8 @@ public class BookControllerTest {
                 .isbn(createNewBook().getIsbn())
                 .build();
 
+        BDDMockito.given(service.find(Mockito.any(Book.class)))
+
     }
 
 }
