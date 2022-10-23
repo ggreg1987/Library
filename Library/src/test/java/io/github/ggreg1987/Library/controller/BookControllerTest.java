@@ -257,7 +257,7 @@ public class BookControllerTest {
                 .build();
 
         BDDMockito.given(service.find(Mockito.any(Book.class),Mockito.any(Pageable.class)))
-                .willReturn(new PageImpl<Book>(Arrays.asList(book)))
+                .willReturn(new PageImpl<Book>(Arrays.asList(book),PageRequest.of(0,100)))
 
     }
 
