@@ -20,6 +20,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -160,8 +161,18 @@ public class BookServiceTest {
     public void findBookTest() {
         var book = createValidBook();
 
-        Page<Book> page = new PageImpl<Book>(Arrays.asList(book), PageRequest.of(0,10),1);
+        PageRequest pageRequest = PageRequest.of(0,10);
+        List<Book> list = Arrays.asList(book);
+
+        Page<Book> page = new PageImpl<Book>(list, pageRequest,1);
         Mockito.when(repository.findAll(Mockito.any(Example.class), Mockito.any(PageRequest.class)))
                 .thenReturn(page);
+
+        Page<Book> result = service.find(book, pageRequest);
+
+        assertThat(result.getTotalElements()).isEqualTo(1);
+        assertThat(result.getContent()).isEqualTo(list);
+        assertThat(result.getPageable().getPageNumber()).isEqualTo(0);
+        assertThat(result.getPageable().getPageSize()).isEqualTo(10);
     }
 }

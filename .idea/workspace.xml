@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <recent name="io.github.ggreg1987.Library.domain.rest.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookControllerTest.findBookTest">
+  <component name="RunManager" selected="JUnit.BookServiceTest.findBookTest">
     <configuration name="BookControllerTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -139,7 +140,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookServiceTest.updateInvalidBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookServiceTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +150,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
-      <option name="METHOD_NAME" value="updateInvalidBook" />
+      <option name="METHOD_NAME" value="findBookTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.findBookTest" />
         <item itemvalue="JUnit.BookControllerTest.findBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.deleteBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.returnTrueWhenIsbExists" />
         <item itemvalue="JUnit.BookRepositoryTest.saveBookTest" />
-        <item itemvalue="JUnit.BookServiceTest.updateInvalidBook" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +193,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/BookServiceTest.java</url>
-          <line>48</line>
+          <line>49</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
