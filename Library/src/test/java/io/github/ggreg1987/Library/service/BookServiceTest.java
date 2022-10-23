@@ -12,9 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -148,5 +152,14 @@ public class BookServiceTest {
                 () -> service.update(book));
 
         Mockito.verify(repository,Mockito.never()).save(book);
+    }
+
+    @Test
+    @DisplayName("Should filter a book by properties")
+    public void findBookTest() {
+        var book = createValidBook();
+
+        Page<Book> page = new PageImpl<Book>(Arrays.asList(book), PageRequest.of(0,10),1);
+        Mockito.when()
     }
 }
