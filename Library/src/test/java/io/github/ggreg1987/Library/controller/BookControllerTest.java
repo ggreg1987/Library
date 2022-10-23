@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -238,6 +240,20 @@ public class BookControllerTest {
                 .andExpect(jsonPath("title").value(createNewBook().getTitle()))
                 .andExpect(jsonPath("author").value(createNewBook().getAuthor()))
                 .andExpect(jsonPath("isbn").value("12345"));
+    }
+
+    @Test
+    @DisplayName("Should filter a book.")
+    public void findBookTest() {
+        Long id = 1L;
+
+        var book = Book.builder()
+                .id(id)
+                .author(createNewBook().getAuthor())
+                .title(createNewBook().getTitle())
+                .isbn(createNewBook().getIsbn())
+                .build();
+
     }
 
 }
