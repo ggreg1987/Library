@@ -246,7 +246,7 @@ public class BookControllerTest {
 
     @Test
     @DisplayName("Should filter a book.")
-    public void findBookTest() {
+    public void findBookTest() throws Exception {
         Long id = 1L;
 
         var book = Book.builder()
@@ -266,6 +266,15 @@ public class BookControllerTest {
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get(BOOK_API.concat(queryString))
                 .accept(APPLICATION_JSON);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("content",hasSize(1)))
+                .andExpect(jsonPath("totalElements").value(1))
+                .andExpect(jsonPath("pageable.pageSize").value(100))
+                .andExpect(jsonPath("pageable.pageNumber").value(0));
+
 
 
     }
