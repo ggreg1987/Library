@@ -17,6 +17,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Optional;
+
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @WebMvcTest(controllers = LoanController.class)
@@ -40,6 +42,6 @@ public class LoanControllerTest {
         String json = new ObjectMapper().writeValueAsString(dto);
 
         BDDMockito.given(bookService.getBookByIsbn("12345"))
-                .willReturn(Book.builder().id(1L).isbn("12345").build());
+                .willReturn(Optional.of(Book.builder().id(1L).isbn("12345").build()));
     }
 }
