@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
+import io.github.ggreg1987.Library.domain.rest.controller.BookController;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import org.junit.jupiter.api.DisplayName;
@@ -34,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest(controllers = BookControllerTest.class)
+@WebMvcTest(controllers = BookController.class)
 @AutoConfigureMockMvc
 public class BookControllerTest {
 
