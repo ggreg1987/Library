@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/dto/LoanDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/entities/Loan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/LoanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/LoanServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/controller/LoanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/controller/LoanControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,14 +72,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.github.ggreg1987.Library.domain.entities" />
       <recent name="io.github.ggreg1987.Library.domain.rest.dto" />
       <recent name="io.github.ggreg1987.Library.domain.rest.controller" />
       <recent name="io.github.ggreg1987.Library.businessRule" />
       <recent name="io.github.ggreg1987.Library.exceptions" />
-      <recent name="io.github.ggreg1987.Library.domain.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.findBookTest">
+  <component name="RunManager" selected="JUnit.LoanControllerTest.createLoanTest">
     <configuration name="BookControllerTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -127,22 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookRepositoryTest.saveBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.repository" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.repository.BookRepositoryTest" />
-      <option name="METHOD_NAME" value="saveBookTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookServiceTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -159,13 +144,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoanControllerTest.createLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
+      <option name="METHOD_NAME" value="createLoanTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanControllerTest.createLoanTest" />
         <item itemvalue="JUnit.BookServiceTest.findBookTest" />
         <item itemvalue="JUnit.BookControllerTest.findBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.deleteBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.returnTrueWhenIsbExists" />
-        <item itemvalue="JUnit.BookRepositoryTest.saveBookTest" />
       </list>
     </recent_temporary>
   </component>
