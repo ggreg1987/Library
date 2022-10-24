@@ -1,6 +1,8 @@
 package io.github.ggreg1987.Library.controller;
 
 import io.github.ggreg1987.Library.domain.rest.controller.LoanController;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,4 +19,10 @@ public class LoanControllerTest {
 
     @Autowired
     MockMvc mvc;
+
+    @Test
+    @DisplayName("Should accomplish a Loan")
+    public void createLoanTest() {
+
+    }
 }
