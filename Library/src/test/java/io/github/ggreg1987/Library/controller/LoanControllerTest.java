@@ -50,8 +50,6 @@ public class LoanControllerTest {
     @DisplayName("Should accomplish a Loan")
     public void createLoanTest() throws Exception {
 
-
-
         LoanDTO dto = LoanDTO.builder()
                 .isbn("12345")
                 .customer("Gregorio")
@@ -77,7 +75,11 @@ public class LoanControllerTest {
                 .perform(request)
                 .andExpect(status().isCreated())
                 .andExpect(content().string("1"));
+    }
 
+    @Test
+    @DisplayName("Should return an error when try loan book with wrong isbn.")
+    public void invalidIsbnLoanTest() {
 
     }
 }
