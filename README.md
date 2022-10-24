@@ -19,5 +19,5 @@
 <li>Jacoco</li>
 <li>Codecov</li>
 <li>Heroku</li>
-<li>Actuotor and SpringBoot admin</li>
+<li>Actuator and SpringBoot admin</li>
 </ul>
