@@ -109,22 +109,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookRepositoryTest.returnTrueWhenIsbExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.repository" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.repository.BookRepositoryTest" />
-      <option name="METHOD_NAME" value="returnTrueWhenIsbExists" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookServiceTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -137,6 +121,21 @@
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
       <option name="METHOD_NAME" value="findBookTest" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LoanControllerTest.createLoanTest" />
+        <item itemvalue="JUnit.LoanControllerTest" />
         <item itemvalue="JUnit.BookServiceTest.findBookTest" />
         <item itemvalue="JUnit.BookControllerTest.findBookTest" />
         <item itemvalue="JUnit.BookRepositoryTest.deleteBookTest" />
-        <item itemvalue="JUnit.BookRepositoryTest.returnTrueWhenIsbExists" />
       </list>
     </recent_temporary>
   </component>

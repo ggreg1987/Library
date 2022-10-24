@@ -27,8 +27,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -43,6 +42,8 @@ public class LoanControllerTest {
 
     @MockBean
     BookService bookService;
+
+    @MockBean
     LoanService loanService;
 
     @Test
@@ -75,7 +76,7 @@ public class LoanControllerTest {
         mvc
                 .perform(request)
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("id").value(1L));
+                .andExpect(content().string("1"));
 
 
     }
