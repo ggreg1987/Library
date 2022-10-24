@@ -2,6 +2,8 @@
 <h2>In Progress...</h2>
 <h3>Technologies Used: </h3>
 <ul>
+<li>Clean Code</li>
+<li>SOLID</li>
 <li>TDD</li>
 <li>BDD</li>
 <li>Mockito</li>
