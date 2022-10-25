@@ -23,6 +23,6 @@ public class ApiErrors {
     }
 
     public ApiErrors(ResponseStatusException ex) {
-        this.errors = Arrays.asList(ex.getMessage());
+        this.errors = Arrays.asList(ex.getReason());
     }
 }
