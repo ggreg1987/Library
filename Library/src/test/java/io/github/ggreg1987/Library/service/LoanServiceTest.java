@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.service;
 
+import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
@@ -73,9 +74,8 @@ public class LoanServiceTest {
 
         Throwable throwable = catchThrowable(() -> service.save(loan));
 
-
-        assertThat(loanSaved.getId()).isEqualTo(loanReturn.getId());
-        assertThat(loanSaved.getBook().getId()).isEqualTo(loanReturn.getBook().getId());
-        assertThat(loanSaved.getBook().getIsbn()).isEqualTo(loanReturn.getBook().getIsbn());
+        assertThat(throwable)
+                .isInstanceOf(BusinessException.class)
+                .hasMessage("Book already loaned.");
     }
 }
