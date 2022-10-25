@@ -183,7 +183,7 @@ public class BookServiceTest {
 
         String isbn = "1234";
         var book = Book.builder().id(1L).isbn(isbn).build();
-        when(repository.findByIsbn()).thenReturn(Optional.of(book));
+        when(repository.findByIsbn(isbn)).thenReturn(Optional.of(book));
 
     }
 }
