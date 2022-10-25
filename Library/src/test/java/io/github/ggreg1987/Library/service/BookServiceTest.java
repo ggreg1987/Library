@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -190,5 +190,7 @@ public class BookServiceTest {
         assertThat(bookFound.isPresent()).isTrue();
         assertThat(bookFound.get().getId()).isEqualTo(book.getId());
         assertThat(bookFound.get().getIsbn()).isEqualTo(book.getIsbn());
+
+        verify(repository,times(1)).findByIsbn(isbn);
     }
 }
