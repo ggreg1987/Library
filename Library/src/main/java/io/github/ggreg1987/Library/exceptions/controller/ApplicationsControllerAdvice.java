@@ -27,4 +27,9 @@ public class ApplicationsControllerAdvice {
     public ApiErrors handleBusinessExceptions(BusinessException ex) {
         return new ApiErrors(ex);
     }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity handleResponseExceptions(ResponseStatusException ex) {
+        return new ResponseEntity(new ApiErrors(ex), ex.getStatus());
+    }
 }
