@@ -1,5 +1,6 @@
 package io.github.ggreg1987.Library.service;
 
+import io.github.ggreg1987.Library.domain.repository.LoanRepository;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.mock.mockito.MockBean;
