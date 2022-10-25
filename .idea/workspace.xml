@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/LoanServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/LoanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/LoanServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/service/LoanServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +70,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.github.ggreg1987.Library.domain.repository" />
       <recent name="io.github.ggreg1987.Library.domain.entities" />
       <recent name="io.github.ggreg1987.Library.domain.rest.dto" />
       <recent name="io.github.ggreg1987.Library.domain.rest.controller" />
       <recent name="io.github.ggreg1987.Library.businessRule" />
-      <recent name="io.github.ggreg1987.Library.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.getBookByIsbnTest">
+  <component name="RunManager" selected="JUnit.LoanServiceTest.saveLoanTest">
     <configuration name="BookControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -123,22 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanControllerTest.invalidIsbnLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
-      <option name="METHOD_NAME" value="invalidIsbnLoanTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoanControllerTest.loanedBookErrorOnCreateLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -155,13 +140,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoanServiceTest.saveLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.LoanServiceTest" />
+      <option name="METHOD_NAME" value="saveLoanTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanServiceTest.saveLoanTest" />
         <item itemvalue="JUnit.BookServiceTest.getBookByIsbnTest" />
         <item itemvalue="JUnit.LoanControllerTest.loanedBookErrorOnCreateLoanTest" />
         <item itemvalue="JUnit.BookControllerTest" />
         <item itemvalue="JUnit.LoanControllerTest" />
-        <item itemvalue="JUnit.LoanControllerTest.invalidIsbnLoanTest" />
       </list>
     </recent_temporary>
   </component>
