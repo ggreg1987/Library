@@ -71,7 +71,8 @@ public class LoanServiceTest {
                 .customer("Gabriel")
                 .book(book).loanDate(LocalDate.now()).build();
 
-        
+        Throwable throwable = catchThrowable(() -> service.save(loan));
+
 
         assertThat(loanSaved.getId()).isEqualTo(loanReturn.getId());
         assertThat(loanSaved.getBook().getId()).isEqualTo(loanReturn.getBook().getId());
