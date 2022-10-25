@@ -7,6 +7,7 @@ import io.github.ggreg1987.Library.domain.rest.controller.LoanController;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,6 +27,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -79,7 +81,31 @@ public class LoanControllerTest {
 
     @Test
     @DisplayName("Should return an error when try loan book with wrong isbn.")
-    public void invalidIsbnLoanTest() {
+    public void invalidIsbnLoanTest() throws Exception {
 
+        LoanDTO dto = LoanDTO.builder()
+                .isbn("12345")
+                .customer("Gregorio")
+                .build();
+        String json = new ObjectMapper().writeValueAsString(dto);
+        var book = Book.builder().id(1L).isbn("12345").build();
+        BDDMockito.given(bookService.getBookByIsbn("12345"))
+                .willReturn(Optional.of(book));
+
+        BDDMockito.given(bookService.getBookByIsbn("12345"))
+                .willReturn(Optional.empty());
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .post(LOAN_API)
+                .accept(APPLICATION_JSON)
+                .contentType(APPLICATION_JSON)
+                .content(json);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("errors", hasSize(1)))
+                .andExpect(jsonPath("errors[0]")
+                        .value("Book nor found for passed isbn."));
     }
 }
