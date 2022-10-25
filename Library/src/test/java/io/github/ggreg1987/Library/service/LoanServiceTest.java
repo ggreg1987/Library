@@ -4,6 +4,8 @@ import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
+import io.github.ggreg1987.Library.domain.rest.service.impl.LoanServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,6 +28,11 @@ public class LoanServiceTest {
 
     @MockBean
     LoanRepository loanRepository;
+
+    @BeforeEach
+    public void setUp() {
+        this.service = new LoanServiceImpl(loanRepository);
+    }
 
     @Test
     @DisplayName("Should save a loan.")
