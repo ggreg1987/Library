@@ -185,5 +185,10 @@ public class BookServiceTest {
         var book = Book.builder().id(1L).isbn(isbn).build();
         when(repository.findByIsbn(isbn)).thenReturn(Optional.of(book));
 
+        Optional<Book> bookFound = service.getBookByIsbn(isbn);
+
+        assertThat(bookFound.isPresent()).isTrue();
+        assertThat(bookFound.get().getId()).isEqualTo(book.getId());
+        assertThat(bookFound.get().getIsbn()).isEqualTo(book.getIsbn());
     }
 }
