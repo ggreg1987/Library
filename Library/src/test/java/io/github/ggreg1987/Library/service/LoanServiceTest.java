@@ -20,7 +20,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -77,5 +77,7 @@ public class LoanServiceTest {
         assertThat(throwable)
                 .isInstanceOf(BusinessException.class)
                 .hasMessage("Book already loaned.");
+
+        verify(loanRepository,never()).save(loan);
     }
 }
