@@ -1,13 +1,13 @@
 package io.github.ggreg1987.Library.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.controller.LoanController;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -107,5 +106,35 @@ public class LoanControllerTest {
                 .andExpect(jsonPath("errors", hasSize(1)))
                 .andExpect(jsonPath("errors[0]")
                         .value("Book nor found for passed isbn."));
+    }
+
+    @Test
+    @DisplayName("Should return an error when try loan a book that is already on loaned.")
+    public void loanedBookErrorOnCreateLoanTest() throws Exception {
+
+        LoanDTO dto = LoanDTO.builder()
+                .isbn("12345")
+                .customer("Gregorio")
+                .build();
+        String json = new ObjectMapper().writeValueAsString(dto);
+        var book = Book.builder().id(1L).isbn("12345").build();
+        BDDMockito.given(bookService.getBookByIsbn("12345"))
+                .willReturn(Optional.of(book));
+
+        BDDMockito.given(loanService.save(Mockito.any(Loan.class)))
+                .willThrow(new BusinessException("Book already loaned."));
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .post(LOAN_API)
+                .accept(APPLICATION_JSON)
+                .contentType(APPLICATION_JSON)
+                .content(json);
+
+        mvc
+                .perform(request)
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("errors", hasSize(1)))
+                .andExpect(jsonPath("errors[0]")
+                        .value("Book already loaned."));
     }
 }
