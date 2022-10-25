@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
@@ -52,6 +53,25 @@ public class LoanServiceTest {
         when(loanRepository.save(loan)).thenReturn(loanReturn);
 
         var loanSaved = service.save(loan);
+
+        assertThat(loanSaved.getId()).isEqualTo(loanReturn.getId());
+        assertThat(loanSaved.getBook().getId()).isEqualTo(loanReturn.getBook().getId());
+        assertThat(loanSaved.getBook().getIsbn()).isEqualTo(loanReturn.getBook().getIsbn());
+    }
+
+    @Test
+    @DisplayName("Should show an error when try to save a book loaned.")
+    public void errorToSaveLoanTest() {
+
+        var book = Book.builder().id(1L)
+                .author("Gregorio")
+                .title("The Avengers").isbn("12345").build();
+
+        var loan = Loan.builder()
+                .customer("Gabriel")
+                .book(book).loanDate(LocalDate.now()).build();
+
+        
 
         assertThat(loanSaved.getId()).isEqualTo(loanReturn.getId());
         assertThat(loanSaved.getBook().getId()).isEqualTo(loanReturn.getBook().getId());
