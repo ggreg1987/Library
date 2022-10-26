@@ -14,7 +14,7 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public Loan save(Loan loan) {
         if(repository.existsByBookAndNotReturned(loan.getBook())) {
-            
+
         }
         return repository.save(any);
     }
