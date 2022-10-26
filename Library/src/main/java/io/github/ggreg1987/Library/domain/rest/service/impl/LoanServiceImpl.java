@@ -12,7 +12,10 @@ public class LoanServiceImpl implements LoanService {
 
     private final LoanRepository repository;
     @Override
-    public Loan save(Loan any) {
+    public Loan save(Loan loan) {
+        if(repository.existsByBookAndNotReturned(loan.getBook())) {
+            
+        }
         return repository.save(any);
     }
 }
