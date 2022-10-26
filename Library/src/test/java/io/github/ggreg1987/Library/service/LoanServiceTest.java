@@ -50,7 +50,7 @@ public class LoanServiceTest {
         var loanReturn = Loan.builder()
                 .id(1L).customer("Gabriel")
                 .book(book).loanDate(LocalDate.now()).build();
-
+        when(loanRepository.existsByBookAndNotReturned(book)).thenReturn(false);
         when(loanRepository.save(loan)).thenReturn(loanReturn);
 
         var loanSaved = service.save(loan);
