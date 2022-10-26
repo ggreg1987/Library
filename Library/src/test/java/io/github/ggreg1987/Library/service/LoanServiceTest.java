@@ -72,6 +72,7 @@ public class LoanServiceTest {
                 .customer("Gabriel")
                 .book(book).loanDate(LocalDate.now()).build();
 
+        when(loanRepository.existsByBookAndNotReturned(book)).thenReturn(true);
         Throwable throwable = catchThrowable(() -> service.save(loan));
 
         assertThat(throwable)
