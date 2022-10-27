@@ -16,7 +16,7 @@ public class LoanRepositoryTest {
     @DisplayName("Should verifying if there is an unreturned loan")
     public void existsByBookAndNotReturnedTest() {
 
+        entitiyManager.persist(book);
         
-
     }
 }
