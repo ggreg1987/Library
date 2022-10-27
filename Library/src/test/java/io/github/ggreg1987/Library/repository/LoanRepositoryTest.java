@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static io.github.ggreg1987.Library.repository.BookRepositoryTest.createNewBook;
+
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @DataJpaTest
@@ -25,7 +27,7 @@ public class LoanRepositoryTest {
     @Test
     @DisplayName("Should verifying if there is an unreturned loan")
     public void existsByBookAndNotReturnedTest() {
-
+        var book = createNewBook("12345");
         entityManager.persist(book);
         entityManager.persist(loan);
 
