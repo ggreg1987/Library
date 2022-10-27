@@ -1,5 +1,5 @@
 package io.github.ggreg1987.Library.repository;
-
+import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +9,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.LocalDate;
 
 import static io.github.ggreg1987.Library.repository.BookRepositoryTest.createNewBook;
 
@@ -29,9 +32,18 @@ public class LoanRepositoryTest {
     public void existsByBookAndNotReturnedTest() {
         var book = createNewBook("12345");
         entityManager.persist(book);
+
+        var loan = Loan.builder()
+                .customer("Iron Man")
+                .book(book)
+                .loanDate(LocalDate.now())
+                .build();
+
         entityManager.persist(loan);
 
-        repository.existsByBookAndNotReturned(book);
+        var  exists = repository.existsByBookAndNotReturned(book);
+
+        assertThat(exists).isTrue();
 
     }
 }

@@ -75,22 +75,7 @@
       <recent name="io.github.ggreg1987.Library.businessRule" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanServiceTest.errorToSaveLoanTest">
-    <configuration name="BookControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.BookControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.LoanRepositoryTest.existsByBookAndNotReturnedTest">
     <configuration name="BookServiceTest.getBookByIsbnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -118,6 +103,22 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
       <option name="METHOD_NAME" value="loanedBookErrorOnCreateLoanTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanRepositoryTest.existsByBookAndNotReturnedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.repository" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.repository.LoanRepositoryTest" />
+      <option name="METHOD_NAME" value="existsByBookAndNotReturnedTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanRepositoryTest.existsByBookAndNotReturnedTest" />
         <item itemvalue="JUnit.LoanServiceTest.errorToSaveLoanTest" />
         <item itemvalue="JUnit.LoanServiceTest.saveLoanTest" />
         <item itemvalue="JUnit.BookServiceTest.getBookByIsbnTest" />
         <item itemvalue="JUnit.LoanControllerTest.loanedBookErrorOnCreateLoanTest" />
-        <item itemvalue="JUnit.BookControllerTest" />
       </list>
     </recent_temporary>
   </component>
