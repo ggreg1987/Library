@@ -19,5 +19,7 @@ public class LoanRepositoryTest {
         entitiyManager.persist(book);
         entitiyManager.persist(loan);
 
+        repository.existsByBookAndNotReturned(book);
+
     }
 }
