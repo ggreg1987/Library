@@ -159,5 +159,7 @@ public class LoanControllerTest {
                                 .content(json)
                 ).andExpect(status().isOk());
 
+        Mockito.verify(loanService, Mockito.times(1)).update(loan);
+
     }
 }
