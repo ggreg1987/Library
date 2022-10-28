@@ -76,7 +76,7 @@
       <recent name="io.github.ggreg1987.Library.businessRule" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanRepositoryTest.existsByBookAndNotReturnedTest">
+  <component name="RunManager" selected="JUnit.LoanControllerTest.returnBookTest">
     <configuration name="BookServiceTest.getBookByIsbnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -93,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanControllerTest.loanedBookErrorOnCreateLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoanControllerTest.returnBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
         <pattern>
@@ -103,7 +103,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
-      <option name="METHOD_NAME" value="loanedBookErrorOnCreateLoanTest" />
+      <option name="METHOD_NAME" value="returnBookTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanControllerTest.returnBookTest" />
         <item itemvalue="JUnit.LoanRepositoryTest.existsByBookAndNotReturnedTest" />
         <item itemvalue="JUnit.LoanServiceTest.errorToSaveLoanTest" />
         <item itemvalue="JUnit.LoanServiceTest.saveLoanTest" />
         <item itemvalue="JUnit.BookServiceTest.getBookByIsbnTest" />
-        <item itemvalue="JUnit.LoanControllerTest.loanedBookErrorOnCreateLoanTest" />
       </list>
     </recent_temporary>
   </component>

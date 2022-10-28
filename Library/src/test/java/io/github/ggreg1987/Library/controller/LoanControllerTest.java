@@ -6,6 +6,7 @@ import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.controller.LoanController;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
+import io.github.ggreg1987.Library.domain.rest.dto.ReturnedLoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import org.junit.jupiter.api.DisplayName;
@@ -29,6 +30,7 @@ import java.util.Optional;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
@@ -140,7 +142,19 @@ public class LoanControllerTest {
 
     @Test
     @DisplayName("Should return a book.")
-    public void returnBookTest() {
+    public void returnBookTest() throws Exception {
+        ReturnedLoanDTO dto = ReturnedLoanDTO
+                .builder().returned(true).build();
+
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        mvc
+                .perform(
+                        patch(LOAN_API.concat("/1"))
+                                .accept(APPLICATION_JSON)
+                                .contentType(APPLICATION_JSON)
+                                .content(json)
+                ).andExpect(status().isOk());
 
     }
 }
