@@ -7,6 +7,8 @@ import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class LoanServiceImpl implements LoanService {
@@ -18,5 +20,15 @@ public class LoanServiceImpl implements LoanService {
             throw new BusinessException("Book already loaned.");
         }
         return repository.save(loan);
+    }
+
+    @Override
+    public Optional<Loan> getById(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Loan update(Loan loan) {
+        return null;
     }
 }
