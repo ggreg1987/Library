@@ -36,17 +36,23 @@ public class LoanServiceTest {
         this.service = new LoanServiceImpl(loanRepository);
     }
 
-    @Test
-    @DisplayName("Should save a loan.")
-    public void saveLoanTest() {
-
+    private Loan createNewLoan() {
         var book = Book.builder().id(1L)
                 .author("Gregorio")
                 .title("The Avengers").isbn("12345").build();
 
-        var loan = Loan.builder()
+        return Loan.builder()
                 .customer("Gabriel")
                 .book(book).loanDate(LocalDate.now()).build();
+
+    }
+
+    @Test
+    @DisplayName("Should save a loan.")
+    public void saveLoanTest() {
+
+        var loan = createNewLoan();
+        var book = createNewLoan().getBook();
         var loanReturn = Loan.builder()
                 .id(1L).customer("Gabriel")
                 .book(book).loanDate(LocalDate.now()).build();
@@ -80,5 +86,11 @@ public class LoanServiceTest {
                 .hasMessage("Book already loaned.");
 
         verify(loanRepository,never()).save(loan);
+    }
+
+    @Test
+    @DisplayName("Should show details of the loan by id")
+    public void getLoanDetailsTest() {
+
     }
 }
