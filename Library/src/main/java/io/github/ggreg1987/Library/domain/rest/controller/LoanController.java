@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.domain.rest.controller;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
+import io.github.ggreg1987.Library.domain.rest.dto.ReturnedLoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDate;
 import java.util.Optional;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/api/loans")
@@ -39,6 +39,14 @@ public class LoanController {
 
         entity= loanService.save(entity);
         return entity.getId();
+    }
+
+    @PatchMapping("{id}")
+    public void returnBook(@PathVariable Long id,
+                           @RequestBody ReturnedLoanDTO dto) {
+        var loan = loanService.getById(id).get();
+        loan.setReturned(dto.getReturned());
+        loanService.update(loan);
     }
 
 }
