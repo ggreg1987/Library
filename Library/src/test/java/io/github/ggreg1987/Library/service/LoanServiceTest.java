@@ -107,5 +107,7 @@ public class LoanServiceTest {
         assertThat(result.get().getBook()).isEqualTo(loan.getBook());
         assertThat(result.get().getLoanDate()).isEqualTo(loan.getLoanDate());
 
+        verify(loanRepository, times(1)).findById(id);
+
     }
 }
