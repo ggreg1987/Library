@@ -110,4 +110,23 @@ public class LoanServiceTest {
         verify(loanRepository, times(1)).findById(id);
 
     }
+
+    @Test
+    @DisplayName("Should update a loan.")
+    public void updateLoanTest() {
+
+        Long id = 1L;
+
+        var loan = createNewLoan();
+        loan.setId(id);
+        loan.setReturned(true);
+
+        when(loanRepository.save(loan)).thenReturn(loan);
+
+        var updatedLoan = service.update(loan);
+
+        assertThat(updatedLoan.getReturned()).isTrue();
+        verify(loanRepository,times(1)).save(loan);
+
+    }
 }
