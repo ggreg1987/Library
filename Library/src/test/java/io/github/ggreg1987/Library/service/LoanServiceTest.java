@@ -99,7 +99,13 @@ public class LoanServiceTest {
 
         Mockito.when(loanRepository.findById(id)).thenReturn(Optional.of(loan));
 
-        
+        Optional<Loan> result = service.getById(id);
+
+        assertThat(result.isPresent()).isTrue();
+        assertThat(result.get().getId()).isEqualTo(id);
+        assertThat(result.get().getCustomer()).isEqualTo(loan.getCustomer());
+        assertThat(result.get().getBook()).isEqualTo(loan.getBook());
+        assertThat(result.get().getLoanDate()).isEqualTo(loan.getLoanDate());
 
     }
 }
