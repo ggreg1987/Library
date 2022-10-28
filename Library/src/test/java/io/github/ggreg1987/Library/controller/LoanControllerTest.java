@@ -145,6 +145,9 @@ public class LoanControllerTest {
     public void returnBookTest() throws Exception {
         ReturnedLoanDTO dto = ReturnedLoanDTO
                 .builder().returned(true).build();
+        var loan = Loan.builder().id(1L).build();
+
+        BDDMockito.given(loanService.getById(Mockito.anyLong())).willReturn(Optional.of(loan));
 
         String json = new ObjectMapper().writeValueAsString(dto);
 
