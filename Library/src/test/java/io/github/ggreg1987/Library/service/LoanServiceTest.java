@@ -92,5 +92,14 @@ public class LoanServiceTest {
     @DisplayName("Should show details of the loan by id")
     public void getLoanDetailsTest() {
 
+        Long id = 1L;
+
+        var loan = createNewLoan();
+        loan.setId(id);
+
+        Mockito.when(loanRepository.findById(id)).thenReturn(Optional.of(loan));
+
+        
+
     }
 }
