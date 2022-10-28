@@ -137,4 +137,10 @@ public class LoanControllerTest {
                 .andExpect(jsonPath("errors[0]")
                         .value("Book already loaned."));
     }
+
+    @Test
+    @DisplayName("Should return a book.")
+    public void returnBookTest() {
+
+    }
 }
