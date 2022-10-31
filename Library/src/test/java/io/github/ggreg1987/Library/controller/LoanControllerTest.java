@@ -205,7 +205,7 @@ public class LoanControllerTest {
                 loan.getCustomer());
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
-                .get(BOOK_API.concat(queryString))
+                .get(LOAN_API.concat(queryString))
                 .accept(APPLICATION_JSON);
 
         mvc
