@@ -33,6 +33,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
 
+import static java.util.Arrays.*;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -195,10 +196,8 @@ public class LoanControllerTest {
 
         Loan loan = LoanServiceTest.createNewLoan();
 
-
-
         BDDMockito.given(loanService.find(Mockito.any(LoanFilterDTO.class),Mockito.any(Pageable.class)))
-                .willReturn(new PageImpl<Loan>(Arrays.asList(loan), PageRequest.of(0,100),1));
+                .willReturn(new PageImpl<Loan>(asList(loan), PageRequest.of(0,100),1));
 
         String queryString = String.format("?title=%s&author=%s&page=0&size=100",
                 book.getTitle(),
