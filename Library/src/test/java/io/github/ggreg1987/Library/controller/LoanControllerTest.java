@@ -199,7 +199,7 @@ public class LoanControllerTest {
         BDDMockito.given(loanService.find(Mockito.any(LoanFilterDTO.class),Mockito.any(Pageable.class)))
                 .willReturn(new PageImpl<Loan>(asList(loan), PageRequest.of(0,100),1));
 
-        String queryString = String.format("?title=%s&author=%s&page=0&size=100",
+        String queryString = String.format("?isbn=%s&customer=%s&page=0&size=100",
                 book.getTitle(),
                 book.getAuthor());
 
