@@ -36,7 +36,7 @@ public class LoanServiceTest {
         this.service = new LoanServiceImpl(loanRepository);
     }
 
-    private Loan createNewLoan() {
+    public static Loan createNewLoan() {
         var book = Book.builder().id(1L)
                 .author("Gregorio")
                 .title("The Avengers").isbn("12345").build();
