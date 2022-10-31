@@ -6,6 +6,7 @@ import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.controller.LoanController;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
+import io.github.ggreg1987.Library.domain.rest.dto.LoanFilterDTO;
 import io.github.ggreg1987.Library.domain.rest.dto.ReturnedLoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
