@@ -1,4 +1,5 @@
 package io.github.ggreg1987.Library.repository;
+import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -30,16 +31,8 @@ public class LoanRepositoryTest {
     @Test
     @DisplayName("Should verifying if there is an unreturned loan")
     public void existsByBookAndNotReturnedTest() {
-        var book = createNewBook("12345");
-        entityManager.persist(book);
-
-        var loan = Loan.builder()
-                .customer("Iron Man")
-                .book(book)
-                .loanDate(LocalDate.now())
-                .build();
-
-        entityManager.persist(loan);
+        var loan = createAndPersistLoan();
+        Book book = loan.getBook();
 
         var  exists = repository.existsByBookAndNotReturned(book);
 
