@@ -46,4 +46,23 @@ public class LoanRepositoryTest {
         assertThat(exists).isTrue();
 
     }
+
+    @Test
+    @DisplayName("Should search a loan by isbn Book or customer")
+    public void findByBookIsbnOrCustomerTest() {
+
+    }
+
+    public Loan createAndPersistLoan() {
+        var book = createNewBook("12345");
+        entityManager.persist(book);
+
+        var loan = Loan.builder()
+                .customer("Iron Man")
+                .book(book)
+                .loanDate(LocalDate.now())
+                .build();
+        entityManager.persist(loan);
+        return loan;
+    }
 }
