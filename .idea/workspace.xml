@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/repository/LoanRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +73,23 @@
       <recent name="io.github.ggreg1987.Library.businessRule" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanControllerTest.findBookTest">
+  <component name="RunManager" selected="JUnit.LoanServiceTest.findLoanTest">
+    <configuration name="BookServiceTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.BookServiceTest" />
+      <option name="METHOD_NAME" value="findBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoanControllerTest.findBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -92,17 +106,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanControllerTest.returnNonExistentBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoanServiceTest.findLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
+          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.LoanControllerTest" />
-      <option name="METHOD_NAME" value="returnNonExistentBookTest" />
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.LoanServiceTest" />
+      <option name="METHOD_NAME" value="findLoanTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,22 +133,6 @@
       <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.LoanServiceTest" />
       <option name="METHOD_NAME" value="getLoanDetailsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanServiceTest.saveLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.LoanServiceTest" />
-      <option name="METHOD_NAME" value="saveLoanTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanServiceTest.findLoanTest" />
+        <item itemvalue="JUnit.BookServiceTest.findBookTest" />
         <item itemvalue="JUnit.LoanControllerTest.findBookTest" />
         <item itemvalue="JUnit.LoanServiceTest.updateLoanTest" />
         <item itemvalue="JUnit.LoanServiceTest.getLoanDetailsTest" />
-        <item itemvalue="JUnit.LoanServiceTest.saveLoanTest" />
-        <item itemvalue="JUnit.LoanControllerTest.returnNonExistentBookTest" />
       </list>
     </recent_temporary>
   </component>
