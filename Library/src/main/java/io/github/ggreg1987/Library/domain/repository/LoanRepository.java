@@ -2,6 +2,7 @@ package io.github.ggreg1987.Library.domain.repository;
 
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
+import lombok.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,11 @@ public interface LoanRepository extends JpaRepository<Loan,Long> {
             "AND (l.returned IS NULL OR l.returned IS FALSE)")
     boolean existsByBookAndNotReturned(@Param("book") Book book);
 
-    Page<Loan> findByBookIsbnOrCustomer(String isbn, String customer, Pageable pageable);
+    @Query(value = "SELECT l FROM Loan l left join l.book as b " +
+            "WHERE b.isbn = :isbn OR l.customer = :customer")
+    Page<Loan> findByBookIsbnOrCustomer(
+            @Param("isbn")
+            String isbn,@Param("customer") String customer,
+            Pageable pageable
+    );
 }
