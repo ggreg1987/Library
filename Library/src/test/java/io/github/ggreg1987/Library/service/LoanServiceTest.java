@@ -4,6 +4,7 @@ import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
+import io.github.ggreg1987.Library.domain.rest.dto.LoanFilterDTO;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import io.github.ggreg1987.Library.domain.rest.service.impl.LoanServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,11 +13,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
@@ -128,5 +135,31 @@ public class LoanServiceTest {
         assertThat(updatedLoan.getReturned()).isTrue();
         verify(loanRepository,times(1)).save(loan);
 
+    }
+
+    @Test
+    @DisplayName("Should filter a loan  by properties")
+    public void findLoanTest() {
+        var loan = createNewLoan();
+        loan.setId(1L);
+
+        LoanFilterDTO loanDTO = LoanFilterDTO
+                .builder().customer("Gabriel")
+                .isbn("54321").build();
+
+        PageRequest pageRequest = PageRequest.of(0,10);
+        List<Loan> list = Arrays.asList(loan);
+
+        Page<Loan> page = new PageImpl<Loan>(list, pageRequest,list.size());
+        when(loanRepository.findByBookIsbnOrCustomer(Mockito.anyString(),
+                Mockito.anyString(),Mockito.any(PageRequest.class)))
+                .thenReturn(page);
+
+        Page<Loan> result = service.find(loanDTO, pageRequest);
+
+        assertThat(result.getTotalElements()).isEqualTo(1);
+        assertThat(result.getContent()).isEqualTo(list);
+        assertThat(result.getPageable().getPageNumber()).isEqualTo(0);
+        assertThat(result.getPageable().getPageSize()).isEqualTo(10);
     }
 }
