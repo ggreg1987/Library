@@ -46,10 +46,20 @@ public class LoanRepositoryTest {
     @DisplayName("Should search a loan by isbn Book or customer")
     public void findByBookIsbnOrCustomerTest() {
 
-        createAndPersistLoan();
-        Page<Loan> result = repository.findByBookIsbnOrCustomer("12345", "Greg", PageRequest.of(0, 10));
+        Loan loan = createAndPersistLoan();
+        Page<Loan> result = repository
+                .findByBookIsbnOrCustomer(
+                        "12345",
+                        "Greg",
+                        PageRequest.of(0, 10)
+                );
 
-        
+        assertThat(result.getContent()).hasSize(1);
+        assertThat(result.getContent()).contains(loan);
+        assertThat(result.getPageable().getPageSize()).isEqualTo(10);
+        assertThat(result.getPageable().getPageNumber()).isEqualTo(0);
+        assertThat(result.getTotalElements()).isEqualTo(1);
+
     }
 
     public Loan createAndPersistLoan() {
