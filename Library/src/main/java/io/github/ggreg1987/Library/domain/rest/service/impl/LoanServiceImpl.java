@@ -1,6 +1,7 @@
 package io.github.ggreg1987.Library.domain.rest.service.impl;
 
 import io.github.ggreg1987.Library.businessRule.BusinessException;
+import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.repository.LoanRepository;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanFilterDTO;
@@ -38,5 +39,10 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public Page<Loan> find(LoanFilterDTO filterDTO, Pageable pageable) {
         return repository.findByBookIsbnOrCustomer(filterDTO.getIsbn(),filterDTO.getCustomer(),pageable);
+    }
+
+    @Override
+    public Page<Loan> getLoansByBook(Book book, Pageable pageable) {
+        return null;
     }
 }
