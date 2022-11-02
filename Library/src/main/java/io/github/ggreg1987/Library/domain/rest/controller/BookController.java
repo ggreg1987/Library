@@ -2,9 +2,11 @@ package io.github.ggreg1987.Library.domain.rest.controller;
 
 import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
+import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
 import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
+import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import io.github.ggreg1987.Library.exceptions.ApiErrors;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -31,6 +33,8 @@ public class BookController {
 
     private final BookService service;
     public final ModelMapper modelMapper;
+
+    public final LoanService loanService;
 
     @PostMapping
     @ResponseStatus(CREATED)
@@ -82,6 +86,19 @@ public class BookController {
 
     @GetMapping("{/id/loans}")
     public Page<LoanDTO> loansByBook(@PathVariable Long id, Pageable pageable) {
+        Book book = service.getById(id)
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
+        Page<Loan> result = loanService.getLoansByBook(book,pageable);
 
+        List<LoanDTO> list = result.getContent()
+                .stream()
+                .map(loan -> {
+                    Book loanBook = loan.getBook();
+                    BookDTO bookDTO = modelMapper.map(loanBook, BookDTO.class);
+                    LoanDTO loanDTO = modelMapper.map(loan, LoanDTO.class);
+                    loanDTO.setBook(bookDTO);
+                    return loanDTO;
+                }).collect(Collectors.toList());
+        return new PageImpl<LoanDTO>(list,pageable,result.getTotalElements());
     }
 }
