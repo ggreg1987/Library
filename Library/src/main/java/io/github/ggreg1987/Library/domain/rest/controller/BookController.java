@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.domain.rest.controller;
 import io.github.ggreg1987.Library.businessRule.BusinessException;
 import io.github.ggreg1987.Library.domain.entities.Book;
 import io.github.ggreg1987.Library.domain.rest.dto.BookDTO;
+import io.github.ggreg1987.Library.domain.rest.dto.LoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.exceptions.ApiErrors;
 import lombok.RequiredArgsConstructor;
@@ -76,6 +77,11 @@ public class BookController {
                 .collect(Collectors.toList());
 
         return new PageImpl<BookDTO>(list,pageRequest,result.getTotalElements());
+
+    }
+
+    @GetMapping("{/id/loans}")
+    public Page<LoanDTO> loansByBook(@PathVariable Long id, Pageable pageable) {
 
     }
 }
