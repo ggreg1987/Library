@@ -25,5 +25,8 @@ public class Loan {
     private LocalDate loanDate;
     private Boolean returned;
 
+    @Column(name = "customer_email",length = 50)
+    private String customerEmail;
+
 
 }
