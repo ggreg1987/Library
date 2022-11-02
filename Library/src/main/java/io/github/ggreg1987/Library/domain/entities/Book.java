@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.domain.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -22,4 +23,7 @@ public class Book {
     private String title;
     @Column(length = 10,nullable = false)
     private String isbn;
+
+    @OneToMany(mappedBy = "book")
+    private List<Loan> loans;
 }
