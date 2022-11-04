@@ -28,5 +28,7 @@ public interface LoanRepository extends JpaRepository<Loan,Long> {
 
     Page<Loan> findByBook(Book book, Pageable pageable);
 
-    List<Loan> findByLoanDateLessThanAndNotReturned(LocalDate threeDaysAgo);
+   @Query(value = "Select l FROM Loan l WHERE l.loanDate " +
+           "<= :threeDaysAgo AND (l.returned IS NULL OR l.returned IS FALSE)")
+    List<Loan> findByLoanDateLessThanAndNotReturned(@Param("threeDaysAgo") LocalDate threeDaysAgo);
 }
