@@ -47,7 +47,7 @@ public class LoanRepositoryTest {
     @Test
     @DisplayName("Should verifying if there is an unreturned loan")
     public void existsByBookAndNotReturnedTest() {
-        var loan = createAndPersistLoan();
+        var loan = createAndPersistLoan(LocalDate.now());
         Book book = loan.getBook();
 
         var  exists = repository.existsByBookAndNotReturned(book);
@@ -60,7 +60,7 @@ public class LoanRepositoryTest {
     @DisplayName("Should search a loan by isbn Book or customer")
     public void findByBookIsbnOrCustomerTest() {
 
-        Loan loan = createAndPersistLoan();
+        Loan loan = createAndPersistLoan(LocalDate.now());
         Page<Loan> result = repository
                 .findByBookIsbnOrCustomer(
                         "12345",
@@ -98,8 +98,5 @@ public class LoanRepositoryTest {
                         .minusDays(4));
         assertThat(result).isEmpty();
     }
-
-
-
 
 }
