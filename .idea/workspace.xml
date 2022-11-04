@@ -197,7 +197,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/repository/LoanRepositoryTest.java</url>
-          <line>47</line>
+          <line>48</line>
           <properties class="io.github.ggreg1987.Library.repository.LoanRepositoryTest" method="existsByBookAndNotReturnedTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
