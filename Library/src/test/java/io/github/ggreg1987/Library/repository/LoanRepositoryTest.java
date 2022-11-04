@@ -15,6 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static io.github.ggreg1987.Library.repository.BookRepositoryTest.createNewBook;
 
@@ -79,7 +80,12 @@ public class LoanRepositoryTest {
     @DisplayName("Should obtain loans whose date is less than or " +
             "equals to three days ago and not returned")
     public void findByLoanDateLessThanAndNotReturned() {
+        Loan loan = createAndPersistLoan(LocalDate.now().minusDays(5));
 
+        List<Loan> result = repository
+                .findByLoanDateLessThanAndNotReturned(LocalDate.now()
+                        .minusDays(4));
+        assertThat(result).hasSize(1).contains(loan);
     }
 
 
