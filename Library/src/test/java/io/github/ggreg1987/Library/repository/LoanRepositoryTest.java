@@ -29,6 +29,19 @@ public class LoanRepositoryTest {
     @Autowired
     TestEntityManager entityManager;
 
+    public Loan createAndPersistLoan(LocalDate loanDate) {
+        var book = createNewBook("12345");
+        entityManager.persist(book);
+
+        var loan = Loan.builder()
+                .customer("Iron Man")
+                .book(book)
+                .loanDate(loanDate)
+                .build();
+        entityManager.persist(loan);
+        return loan;
+    }
+
 
     @Test
     @DisplayName("Should verifying if there is an unreturned loan")
@@ -62,16 +75,14 @@ public class LoanRepositoryTest {
 
     }
 
-    public Loan createAndPersistLoan() {
-        var book = createNewBook("12345");
-        entityManager.persist(book);
+    @Test
+    @DisplayName("Should obtain loans whose date is less than or " +
+            "equals to three days ago and not returned")
+    public void findByLoanDateLessThanAndNotReturned() {
 
-        var loan = Loan.builder()
-                .customer("Iron Man")
-                .book(book)
-                .loanDate(LocalDate.now())
-                .build();
-        entityManager.persist(loan);
-        return loan;
     }
+
+
+
+
 }
