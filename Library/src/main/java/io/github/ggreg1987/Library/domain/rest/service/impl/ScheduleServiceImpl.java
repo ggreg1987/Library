@@ -1,6 +1,7 @@
 package io.github.ggreg1987.Library.domain.rest.service.impl;
 
 import io.github.ggreg1987.Library.domain.entities.Loan;
+import io.github.ggreg1987.Library.domain.rest.service.EmailService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
