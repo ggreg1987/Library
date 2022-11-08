@@ -3,6 +3,7 @@ package io.github.ggreg1987.Library.domain.rest.service.impl;
 import io.github.ggreg1987.Library.domain.entities.Loan;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ import java.util.stream.Collectors;
 public class ScheduleServiceImpl {
 
    private static final String CRON_LATE_LOANS = "0 0 0 1/1 * ?";
+
+   @Value("${application.mail.lateloans.message}")
+   private String message;
 
    private final LoanService loanService;
    private final EmailService emailService;
