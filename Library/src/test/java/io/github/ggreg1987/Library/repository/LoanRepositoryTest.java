@@ -91,7 +91,7 @@ public class LoanRepositoryTest {
     @Test
     @DisplayName("Testing if there is not a book loaned")
     public void notFindByLoanDateLessThanAndNotReturned() {
-        Loan loan = createAndPersistLoan(LocalDate.now().minusDays(5));
+        Loan loan = createAndPersistLoan(LocalDate.now());
 
         List<Loan> result = repository
                 .findByLoanDateLessThanAndNotReturned(LocalDate.now()
