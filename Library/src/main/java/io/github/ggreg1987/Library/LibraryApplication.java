@@ -15,13 +15,10 @@ import java.util.List;
 @SpringBootApplication
 @EnableScheduling
 public class LibraryApplication {
+
+	/*
 	@Autowired
 	private EmailService emailService;
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
-
 	@Bean
 	public CommandLineRunner runner() {
 		return args -> {
@@ -30,9 +27,14 @@ public class LibraryApplication {
 			System.out.println("Sending mail successful");
 		};
 	}
+	*/
+
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryApplication.class, args);
 	}
-
 }
