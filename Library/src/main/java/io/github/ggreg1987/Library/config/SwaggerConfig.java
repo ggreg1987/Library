@@ -2,6 +2,7 @@ package io.github.ggreg1987.Library.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -17,7 +18,12 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-
+        return new ApiInfoBuilder()
+                .title("Library API")
+                .description("API of the Book control rental project")
+                .version("1.0")
+                .contact(contact())
+                .build();
     }
 
     private Contact contact() {
