@@ -18,7 +18,7 @@ public class EmailServiceImpl implements EmailService {
 
     private final JavaMailSender javaMailSender;
     @Override
-    public void sandMails(String message, List<String> mailList) {
+    public void sendMails(String message, List<String> mailList) {
 
         String[] listMail = mailList.toArray(new String[mailList.size()]);
 

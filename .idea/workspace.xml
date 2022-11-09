@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/LibraryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/LibraryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/ScheduleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/io/github/ggreg1987/Library/domain/rest/service/impl/ScheduleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +81,20 @@
       <recent name="io.github.ggreg1987.Library.domain.rest.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanRepositoryTest.notFindByLoanDateLessThanAndNotReturned">
+  <component name="RunManager" selected="Application.LibraryApplication">
+    <configuration name="LibraryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.LibraryApplication" />
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -138,29 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanServiceTest.findLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.service" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.service.LoanServiceTest" />
-      <option name="METHOD_NAME" value="findLoanTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LibraryApplication" />
         <item itemvalue="JUnit.LoanRepositoryTest.notFindByLoanDateLessThanAndNotReturned" />
         <item itemvalue="JUnit.LoanRepositoryTest" />
         <item itemvalue="JUnit.LoanControllerTest" />
         <item itemvalue="JUnit.LoanRepositoryTest.findByBookIsbnOrCustomerTest" />
-        <item itemvalue="JUnit.LoanServiceTest.findLoanTest" />
       </list>
     </recent_temporary>
   </component>

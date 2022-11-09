@@ -31,6 +31,6 @@ public class ScheduleServiceImpl {
                .map(loan -> loan.getCustomerEmail())
                .collect(Collectors.toList());
 
-       emailService.sandMails(message,mailList);
+       emailService.sendMails(message,mailList);
    }
 }

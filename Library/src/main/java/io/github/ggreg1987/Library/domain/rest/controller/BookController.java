@@ -84,7 +84,7 @@ public class BookController {
 
     }
 
-    @GetMapping("{/id/loans}")
+    @GetMapping("{id}/loans")
     public Page<LoanDTO> loansByBook(@PathVariable Long id, Pageable pageable) {
         Book book = service.getById(id)
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
