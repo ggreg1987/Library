@@ -8,6 +8,8 @@ import io.github.ggreg1987.Library.domain.rest.dto.LoanFilterDTO;
 import io.github.ggreg1987.Library.domain.rest.dto.ReturnedLoanDTO;
 import io.github.ggreg1987.Library.domain.rest.service.BookService;
 import io.github.ggreg1987.Library.domain.rest.service.LoanService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,7 @@ import static org.springframework.http.HttpStatus.*;
 @RestController
 @RequestMapping("/api/loans")
 @RequiredArgsConstructor
+@Api
 public class LoanController {
 
     private final LoanService loanService;
@@ -38,6 +41,7 @@ public class LoanController {
 
     @PostMapping
     @ResponseStatus(CREATED)
+    @ApiOperation("Create a Loan")
     public Long create(@RequestBody LoanDTO dto) {
        var book = bookService.getBookByIsbn(dto.getIsbn())
                .orElseThrow(() ->
@@ -53,6 +57,7 @@ public class LoanController {
     }
 
     @PatchMapping("{id}")
+    @ApiOperation("Obtains a Loans details by id")
     public void returnBook(@PathVariable Long id,
                            @RequestBody ReturnedLoanDTO dto) {
         var loan = loanService.getById(id)
@@ -62,6 +67,7 @@ public class LoanController {
     }
 
     @GetMapping
+    @ApiOperation("Obtain all Loans.")
     public Page<LoanDTO> find(LoanFilterDTO dto, Pageable pageable) {
         Page<Loan> result = loanService.find(dto, pageable);
         List<LoanDTO> loansCollect = result
