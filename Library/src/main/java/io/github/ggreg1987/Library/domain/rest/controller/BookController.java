@@ -10,6 +10,8 @@ import io.github.ggreg1987.Library.domain.rest.service.LoanService;
 import io.github.ggreg1987.Library.exceptions.ApiErrors;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
@@ -60,6 +62,9 @@ public class BookController {
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     @ApiOperation("Deletes a Book by id")
+    @ApiResponses({
+            @ApiResponse(code = 204, message = "Book Successfully deleted")
+    })
     public void delete(@PathVariable Long id) {
         var book = service.getById(id)
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
