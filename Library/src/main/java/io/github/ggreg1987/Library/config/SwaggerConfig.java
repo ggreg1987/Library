@@ -19,7 +19,7 @@ public class SwaggerConfig {
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("package io.github.ggreg1987" +
+                .apis(RequestHandlerSelectors.basePackage("io.github.ggreg1987" +
                         ".Library.domain.rest.controller"))
                 .paths(PathSelectors.any())
                 .build()
