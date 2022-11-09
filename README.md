@@ -2,6 +2,7 @@
 <h2>In Progress...Project being carried in the Backend Branch.</h2>
 <h3>Technologies Used: </h3>
 <ul>
+  <li>Pageable</li>
 <li>Schedule and MailTrap </li>
 <li>Swagger</li>
 <li>Clean Code</li>
