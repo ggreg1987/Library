@@ -14,12 +14,20 @@ import java.util.List;
 public class EmailServiceImpl implements EmailService {
 
     @Value("${application.mail.default-remitter}")
-    private String  message;
+    private String remitter;
 
     private final JavaMailSender javaMailSender;
     @Override
     public void sandMails(String message, List<String> mailList) {
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
+        String[] listMail = mailList.toArray(new String[mailList.size()]);
+
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setFrom(remitter);
+        simpleMailMessage.setSubject("Late Book Loan");
+        simpleMailMessage.setText(message);
+        simpleMailMessage.setTo(listMail);
+
+        javaMailSender.send(simpleMailMessage);
     }
 }
