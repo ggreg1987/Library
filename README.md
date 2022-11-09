@@ -12,6 +12,7 @@
 <li>ModelMapper</li>
 <li>Service</li>
 <li>JPA</li>
+<li>Schedule and MailTrap </li>
 <li>Exceptions</li>
 <li>Validations</li>
 </ul>
