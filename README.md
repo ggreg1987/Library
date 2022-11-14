@@ -1,9 +1,8 @@
 <h1>Step by step of Loan Book Project</h2>
-<h2>In Progress...</h2>
 <h3>Technologies Used: </h3>
 <ul>
  <li>Pageable</li>
-<li>Swagger</li>
+<li>Swagger - http://localhost:8080/swagger-ui/index.html</li>
 <li>Clean Code</li>
 <li>SOLID</li>
 <li>Junit5</li>
