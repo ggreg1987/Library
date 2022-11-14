@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="" />
+    <list default="true" id="26e928ce-db37-4733-b437-bba3ed721e2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/controller/BookControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/test/java/io/github/ggreg1987/Library/controller/BookControllerTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +83,7 @@
       <recent name="io.github.ggreg1987.Library" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryApplication">
+  <component name="RunManager" selected="JUnit.BookControllerTest">
     <configuration name="LibraryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.LibraryApplication" />
       <module name="Library" />
@@ -90,6 +93,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ggreg1987.Library.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.controller" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.controller.BookControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,22 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanRepositoryTest.findByBookIsbnOrCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ggreg1987.Library.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.ggreg1987.Library.repository" />
-      <option name="MAIN_CLASS_NAME" value="io.github.ggreg1987.Library.repository.LoanRepositoryTest" />
-      <option name="METHOD_NAME" value="findByBookIsbnOrCustomerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoanRepositoryTest.notFindByLoanDateLessThanAndNotReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -158,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookControllerTest" />
         <item itemvalue="Application.LibraryApplication" />
         <item itemvalue="JUnit.LoanRepositoryTest.notFindByLoanDateLessThanAndNotReturned" />
         <item itemvalue="JUnit.LoanRepositoryTest" />
         <item itemvalue="JUnit.LoanControllerTest" />
-        <item itemvalue="JUnit.LoanRepositoryTest.findByBookIsbnOrCustomerTest" />
       </list>
     </recent_temporary>
   </component>
