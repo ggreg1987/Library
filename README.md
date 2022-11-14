@@ -2,8 +2,7 @@
 <h2>In Progress...Now starting continuous integration and deploy</h2>
 <h3>Technologies Used: </h3>
 <ul>
-  <li>Pageable</li>
-<li>Schedule and MailTrap </li>
+ <li>Pageable</li>
 <li>Swagger</li>
 <li>Clean Code</li>
 <li>SOLID</li>
@@ -25,5 +24,4 @@
 <li>Jacoco</li>
 <li>Codecov</li>
 <li>Heroku</li>
-<li>Actuator and SpringBoot admin</li>
 </ul>
