@@ -10,19 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class LibraryApplication {
 
-	/*
-	@Autowired
-	private EmailService emailService;
-	@Bean
-	public CommandLineRunner runner() {
-		return args -> {
-			List<String> mails = Arrays.asList("api-java.e968582968e-aa5996+1@inbox.mailtrap.io");
-			emailService.sendMails("Testing mail service",mails);
-			System.out.println("Sending mail successful");
-		};
-	}
-	*/
-
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
