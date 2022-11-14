@@ -17,9 +17,4 @@
 <li>Exceptions</li>
 <li>Validations</li>
 </ul>
-<h3>Technologies That Will Be Used: </h3>
-<ul>
-<li>Jacoco</li>
-<li>Codecov</li>
-<li>Heroku</li>
-</ul>
+
